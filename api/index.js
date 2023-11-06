@@ -13,6 +13,7 @@ mongoose
     console.log(error)
   })
 
+// Connecting with backend server using express on port 3000
 const app = express()
 
 app.listen(3000, () => {
