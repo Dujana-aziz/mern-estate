@@ -28,3 +28,14 @@ app.listen(3000, () => {
 // Routes to communicate between Client & Server
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
+
+// Middle Ware for handling server db error
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500
+  const message = err.message || 'Internal Server Error'
+  return res.status(statusCode).json({
+    success: false,
+    statusCode,
+    message,
+  })
+})
