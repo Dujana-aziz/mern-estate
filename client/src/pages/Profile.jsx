@@ -32,6 +32,7 @@ export default function Profile() {
     const storageRef = ref(storage, fileName)
     const uploadTask = uploadBytesResumable(storageRef, file)
 
+
     uploadTask.on(
       'state_changed',
       (snapshot) => {
