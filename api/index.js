@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser'
 
 import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.route.js'
+import listingRouter from './routes/listing.route.js'
 
 import dotenv from 'dotenv'
 dotenv.config()
@@ -31,6 +32,7 @@ app.listen(3000, () => {
 // Routes to communicate between Client & Server
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/listing', listingRouter)
 
 // Middle Ware for handling server db error
 app.use((err, req, res, next) => {
