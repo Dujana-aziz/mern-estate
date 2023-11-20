@@ -1,4 +1,4 @@
-###### Real Estate MERN Stack Website with Google Authentication
+##### Real Estate MERN Stack Website with Google Authentication
 
 ### Overview
 Welcome to the Real Estate MERN stack website with Google authentication. This cutting-edge platform empowers users with seamless property transactions, combining a rich set of features for a comprehensive real estate experience.
