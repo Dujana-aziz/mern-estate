@@ -23,6 +23,7 @@ Welcome to the Real Estate MERN stack website with Google authentication. This c
 - **MongoDB:** Database for storing property information.
 - **Express.js:** Backend framework for handling server logic.
 - **React.js:** Frontend library for building user interfaces.
+- **Tailwind css:** Frontend library for Styling user interfaces.
 - **Node.js:** Runtime environment for server-side code.
 - **Google Authentication:** Seamless and secure user authentication.
 
