@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.route.js'
 import listingRouter from './routes/listing.route.js'
+import path from 'path'
 
 import dotenv from 'dotenv'
 dotenv.config()
@@ -19,6 +20,8 @@ mongoose
     console.log(error)
   })
 
+const __dirname = path.resolve()
+
 // Connecting with backend server using express on port 3000
 const app = express()
 app.use(express.json())
@@ -26,7 +29,6 @@ app.use(express.json())
 app.use(cookieParser())
 
 var port = process.env.PORT || 3000
-
 app.listen(port, function () {
   console.log('Example app listening on port ' + port + '!')
 })
@@ -35,6 +37,11 @@ app.listen(port, function () {
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/listing', listingRouter)
+
+app.use(express.static(path.join(__dirname, '/client/dist')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
+})
 
 // Middle Ware for handling server db error
 app.use((err, req, res, next) => {
